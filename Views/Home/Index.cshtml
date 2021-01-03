@@ -1,0 +1,31 @@
+﻿@model IEnumerable<IdentityExampleNetCore.Models.User>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <br>
+    <hr>
+    <table class="table">
+        <thead>
+            <th>İsim</th>
+            <th>Mail</th>
+            <th>Şifre</th>
+        </thead>
+
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.Password</td>
+            </tr>
+        }   
+        </tbody>
+    </table>
+    
+</div>

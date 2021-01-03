@@ -1,0 +1,35 @@
+@model IdentityExampleNetCore.Models.User
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="row">  
+    <div class="col-md-3">  
+        <form method = "post" asp-controller = "Account" asp-action = "Login"> 
+            @Html.AntiForgeryToken()
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>  
+
+            <div class="form-group"> 
+                <label asp-for = "Email"></label> 
+                <input asp-for = "Email" class="form-control"/> 
+                <span asp-validation-for = "Email"></span> 
+            </div> 
+
+            <div class="form-group"> 
+                <label asp-for = "Password"></label> 
+                <input asp-for = "Password" class="form-control" />
+                <span asp-validation-for = "Password"></span> 
+            </div> 
+            <input type = "submit" value="Login" class="btn btn-primary"/> 
+        </form> 
+
+        @if(!String.IsNullOrEmpty(ViewBag.error)){
+            <br>
+            <div class="alert alert-danger">
+                @ViewBag.error
+            </div>
+        }
+        
+    </div>
+</div>

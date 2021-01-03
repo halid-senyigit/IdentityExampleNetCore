@@ -1,0 +1,9 @@
+{
+    "emmet.includeLanguages": {
+        "razor": "html"
+    },
+    "files.associations": {
+        "*.cshtml": "razor"
+    },
+    "git.ignoreLimitWarning": true
+}
